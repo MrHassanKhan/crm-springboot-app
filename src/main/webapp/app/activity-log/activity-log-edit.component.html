@@ -1,0 +1,15 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@activityLog.edit.headline">Edit Activity Log</h1>
+    <div>
+        <a routerLink="/activityLogs" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@activityLog.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@activityLog.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="entityType" rowType="select" [options]="{'LEAD': 'LEAD', 'TASK': 'TASK', 'CUSTOMER': 'CUSTOMER', 'SALESOPPORTUNITY': 'SALESOPPORTUNITY'}" i18n-label="@@activityLog.entityType.label" label="Entity Type" />
+    <app-input-row [group]="editForm" field="entityId" rowType="number" i18n-label="@@activityLog.entityId.label" label="Entity Id" />
+    <app-input-row [group]="editForm" field="action" rowType="radio" [options]="{'CREATED': 'CREATED', 'UPDATED': 'UPDATED', 'DELETED': 'DELETED'}" i18n-label="@@activityLog.action.label" label="Action" />
+    <app-input-row [group]="editForm" field="description" i18n-label="@@activityLog.description.label" label="Description" />
+    <app-input-row [group]="editForm" field="timestamp" datepicker="datetimepicker" i18n-label="@@activityLog.timestamp.label" label="Timestamp" />
+    <input type="submit" i18n-value="@@activityLog.edit.headline" value="Edit Activity Log" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

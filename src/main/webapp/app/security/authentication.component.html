@@ -1,0 +1,10 @@
+<h1 class="grow text-3xl md:text-4xl font-medium mb-8" i18n="@@authentication.login.headline">Login</h1>
+<form [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="loginForm" field="username" i18n-label="@@authentication.username.label" label="Username" />
+    <app-input-row [group]="loginForm" field="password" rowType="password" i18n-label="@@authentication.password.label" label="Password" />
+    <input type="submit" i18n-value="@@authentication.login.headline" value="Login" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>
+<p class="mt-12">
+    <span i18n="@@authentication.registerNow">You don't have an account yet?</span>
+    <a routerLink="/register" class="underline" i18n="@@authentication.registerNow.link">Register now</a>
+</p>

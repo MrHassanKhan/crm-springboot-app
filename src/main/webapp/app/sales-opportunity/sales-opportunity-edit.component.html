@@ -1,0 +1,16 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@salesOpportunity.edit.headline">Edit Sales Opportunity</h1>
+    <div>
+        <a routerLink="/salesOpportunities" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@salesOpportunity.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@salesOpportunity.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="title" i18n-label="@@salesOpportunity.title.label" label="Title" />
+    <app-input-row [group]="editForm" field="description" i18n-label="@@salesOpportunity.description.label" label="Description" />
+    <app-input-row [group]="editForm" field="stage" rowType="radio" [options]="{'QUALIFICATION': 'QUALIFICATION', 'PROPOSAL': 'PROPOSAL', 'CLOSED': 'CLOSED'}" i18n-label="@@salesOpportunity.stage.label" label="Stage" />
+    <app-input-row [group]="editForm" field="value" i18n-label="@@salesOpportunity.value.label" label="Value" />
+    <app-input-row [group]="editForm" field="lead" rowType="select" [options]="leadValues" i18n-label="@@salesOpportunity.lead.label" label="Lead" />
+    <app-input-row [group]="editForm" field="assignedTo" rowType="select" [options]="assignedToValues" i18n-label="@@salesOpportunity.assignedTo.label" label="Assigned To" />
+    <input type="submit" i18n-value="@@salesOpportunity.edit.headline" value="Edit Sales Opportunity" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

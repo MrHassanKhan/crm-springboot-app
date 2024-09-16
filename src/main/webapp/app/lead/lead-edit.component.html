@@ -1,0 +1,16 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@lead.edit.headline">Edit Lead</h1>
+    <div>
+        <a routerLink="/leads" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@lead.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@lead.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="firstname" i18n-label="@@lead.firstname.label" label="Firstname" />
+    <app-input-row [group]="editForm" field="lastname" i18n-label="@@lead.lastname.label" label="Lastname" />
+    <app-input-row [group]="editForm" field="email" i18n-label="@@lead.email.label" label="Email" />
+    <app-input-row [group]="editForm" field="phone" i18n-label="@@lead.phone.label" label="Phone" />
+    <app-input-row [group]="editForm" field="status" rowType="radio" [options]="{'NEW': 'NEW', 'CONTACTED': 'CONTACTED', 'QUALIFIED': 'QUALIFIED'}" i18n-label="@@lead.status.label" label="Status" />
+<!--    <app-input-row [group]="editForm" field="assignedUser" rowType="select" [options]="assignedUserValues" i18n-label="@@lead.assignedUser.label" label="Assigned User" />-->
+    <input type="submit" i18n-value="@@lead.edit.headline" value="Edit Lead" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

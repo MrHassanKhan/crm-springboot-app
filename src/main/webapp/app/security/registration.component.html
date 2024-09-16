@@ -1,0 +1,10 @@
+<h1 class="grow text-3xl md:text-4xl font-medium mb-8" i18n="@@registration.register.headline">Registration</h1>
+<form [formGroup]="registrationForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="registrationForm" field="username" i18n-label="@@registrationRequest.username.label" label="Username" />
+    <app-input-row [group]="registrationForm" field="email" i18n-label="@@registrationRequest.email.label" label="Email" />
+    <app-input-row [group]="registrationForm" field="password" rowType="password" i18n-label="@@registrationRequest.password.label" label="Password" />
+    <app-input-row [group]="registrationForm" field="fullname" i18n-label="@@registrationRequest.fullname.label" label="Fullname" />
+    <app-input-row [group]="registrationForm" field="address" i18n-label="@@registrationRequest.address.label" label="Address" />
+    <app-input-row [group]="registrationForm" field="accountType" rowType="radio" [options]="{'ADMIN': 'ADMIN', 'SALESPERSON': 'SALESPERSON'}" i18n-label="@@registrationRequest.accountType.label" label="Account Type" />
+    <input type="submit" i18n-value="@@registration.register.headline" value="Registration" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

@@ -1,0 +1,16 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@task.add.headline">Add Task</h1>
+    <div>
+        <a routerLink="/tasks" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@task.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="title" i18n-label="@@task.title.label" label="Title" />
+    <app-input-row [group]="addForm" field="description" i18n-label="@@task.description.label" label="Description" />
+    <app-input-row [group]="addForm" field="dueDate" datepicker="datepicker" i18n-label="@@task.dueDate.label" label="Due Date" />
+    <app-input-row [group]="addForm" field="priority" rowType="radio" [options]="{'HIGH': 'HIGH', 'MEDIUM': 'MEDIUM', 'LOW': 'LOW'}" i18n-label="@@task.priority.label" label="Priority" />
+    <app-input-row [group]="addForm" field="status" rowType="radio" [options]="{'PENDING': 'PENDING', 'COMPLETED': 'COMPLETED', 'OVERDUE': 'OVERDUE'}" i18n-label="@@task.status.label" label="Status" />
+    <app-input-row [group]="addForm" field="assignedTo" rowType="select" [options]="assignedToValues" i18n-label="@@task.assignedTo.label" label="Assigned To" />
+    <app-input-row [group]="addForm" field="salesOpportunity" rowType="select" [options]="salesOpportunityValues" i18n-label="@@task.salesOpportunity.label" label="Sales Opportunity" />
+    <input type="submit" i18n-value="@@task.add.headline" value="Add Task" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

@@ -1,0 +1,16 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@customer.edit.headline">Edit Customer</h1>
+    <div>
+        <a routerLink="/customers" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@customer.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@customer.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="firstName" i18n-label="@@customer.firstName.label" label="First Name" />
+    <app-input-row [group]="editForm" field="lastName" i18n-label="@@customer.lastName.label" label="Last Name" />
+    <app-input-row [group]="editForm" field="email" i18n-label="@@customer.email.label" label="Email" />
+    <app-input-row [group]="editForm" field="phone" i18n-label="@@customer.phone.label" label="Phone" />
+    <app-input-row [group]="editForm" field="address" i18n-label="@@customer.address.label" label="Address" />
+<!--    <app-input-row [group]="editForm" field="assignedSalesPerson" rowType="select" [options]="assignedSalesPersonValues" i18n-label="@@customer.assignedSalesPerson.label" label="Assigned Sales Person" />-->
+    <input type="submit" i18n-value="@@customer.edit.headline" value="Edit Customer" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

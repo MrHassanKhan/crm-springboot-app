@@ -1,0 +1,17 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@task.edit.headline">Edit Task</h1>
+    <div>
+        <a routerLink="/tasks" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@task.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@task.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="title" i18n-label="@@task.title.label" label="Title" />
+    <app-input-row [group]="editForm" field="description" i18n-label="@@task.description.label" label="Description" />
+    <app-input-row [group]="editForm" field="dueDate" datepicker="datepicker" i18n-label="@@task.dueDate.label" label="Due Date" />
+    <app-input-row [group]="editForm" field="priority" rowType="radio" [options]="{'HIGH': 'HIGH', 'MEDIUM': 'MEDIUM', 'LOW': 'LOW'}" i18n-label="@@task.priority.label" label="Priority" />
+    <app-input-row [group]="editForm" field="status" rowType="radio" [options]="{'PENDING': 'PENDING', 'COMPLETED': 'COMPLETED', 'OVERDUE': 'OVERDUE'}" i18n-label="@@task.status.label" label="Status" />
+    <app-input-row [group]="editForm" field="assignedTo" rowType="select" [options]="assignedToValues" i18n-label="@@task.assignedTo.label" label="Assigned To" />
+    <app-input-row [group]="editForm" field="salesOpportunity" rowType="select" [options]="salesOpportunityValues" i18n-label="@@task.salesOpportunity.label" label="Sales Opportunity" />
+    <input type="submit" i18n-value="@@task.edit.headline" value="Edit Task" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>
